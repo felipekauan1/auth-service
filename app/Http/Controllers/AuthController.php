@@ -66,6 +66,7 @@ class AuthController extends Controller
     public function validateToken(): JsonResponse
     {
         return response()->json([
+            'usuario' => Auth::user(),
             'token_valido'  => true,
         ]);
     }
