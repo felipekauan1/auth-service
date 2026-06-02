@@ -52,7 +52,7 @@ POST /api/login → Valida credenciais → Gera token → Retorna token
 
 GET /api/me → Valida token → Retorna usuário
 
-GET /api/validate-token → Valida token → Retorna { token_valido: true }
+GET /api/validate-token → Valida token → Retorna { usuario: { id, name, email }, token_valido: true }
 
 POST /api/logout → Invalida token → Retorna confirmação
 ```
@@ -203,6 +203,11 @@ GET /api/validate-token
 **Resposta (200):**
 ```json
 {
+    "usuario": {
+        "id": 1,
+        "name": "Felipe",
+        "email": "felipe@email.com",
+    },
     "token_valido": true
 }
 ```
